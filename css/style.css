@@ -1249,6 +1249,19 @@ img {
   transform: translateY(-3px);
 }
 
+/* Social links on light backgrounds (contact page) */
+.contact-info-card .social-links a {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  color: var(--text-body);
+}
+
+.contact-info-card .social-links a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
 /* ===== ANIMATIONS ===== */
 .fade-up {
   opacity: 0;
