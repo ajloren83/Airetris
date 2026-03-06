@@ -131,7 +131,7 @@ img {
 }
 
 .navbar-brand img {
-  height: 44px;
+  height: 58px;
   width: auto;
   transition: var(--transition);
 }
@@ -267,6 +267,23 @@ img {
   letter-spacing: 0.8px;
   text-transform: uppercase;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s ease;
+}
+
+.btn-accent:hover::before {
+  left: 100%;
 }
 
 .btn-accent:hover {
@@ -304,6 +321,8 @@ img {
   position: relative;
   overflow: hidden;
   background: var(--primary);
+  padding-top: 90px;
+  /* offset for fixed navbar */
 }
 
 .hero-bg {
@@ -315,12 +334,12 @@ img {
   z-index: 0;
 }
 
-.hero-bg img {
+.hero-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.12;
-  filter: saturate(0.3);
+  opacity: 0.45;
+  filter: saturate(0.5);
 }
 
 .hero-bg::after {
@@ -330,7 +349,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(9, 47, 83, 0.92) 0%, rgba(9, 47, 83, 0.7) 50%, rgba(9, 47, 83, 0.88) 100%);
+  background: linear-gradient(135deg, rgba(9, 47, 83, 0.82) 0%, rgba(9, 47, 83, 0.55) 50%, rgba(9, 47, 83, 0.78) 100%);
 }
 
 .hero-section .container {
@@ -397,13 +416,13 @@ img {
 }
 
 .hero-section h1 {
-  font-size: 4.8rem;
+  font-size: 3.8rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 1.8rem;
-  line-height: 1.08;
+  line-height: 1.12;
   max-width: 700px;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .hero-section h1 .accent-text {
@@ -554,6 +573,14 @@ img {
   font-size: 1.05rem;
   color: var(--text-light);
   max-width: 580px;
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.section-subtitle-wide {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 820px;
   line-height: 1.85;
   font-weight: 300;
 }
@@ -1049,7 +1076,197 @@ img {
   box-shadow: var(--shadow-lg);
 }
 
+/* ===== ARETÉ PILLARS GRID ===== */
+.arete-pillars-section {
+  padding-top: 3rem;
+  border-top: 1px solid var(--card-border);
+  margin-top: 1rem;
+}
+
+.arete-pillar-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem 1.6rem;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.arete-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.arete-pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184, 147, 58, 0.18);
+}
+
+.arete-pillar-card:hover::before {
+  opacity: 1;
+}
+
+/* Top row: number badge + icon */
+.arete-pillar-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.arete-pillar-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: rgba(184, 147, 58, 0.18);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1px;
+  transition: var(--transition);
+}
+
+.arete-pillar-card:hover .arete-pillar-num {
+  color: rgba(184, 147, 58, 0.35);
+}
+
+.arete-pillar-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--accent-subtle);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.arete-pillar-icon i {
+  font-size: 1.25rem;
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.arete-pillar-card:hover .arete-pillar-icon {
+  background: var(--accent);
+}
+
+.arete-pillar-card:hover .arete-pillar-icon i {
+  color: var(--white);
+}
+
+.arete-pillar-card h6 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem;
+  line-height: 1.45;
+}
+
+.arete-pillar-desc {
+  font-size: 0.87rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.arete-pillar-footer {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.arete-pillar-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* Quote + CTA Banner */
+.arete-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 2.4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.arete-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.arete-cta-banner::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 147, 58, 0.08);
+  pointer-events: none;
+}
+
+.arete-cta-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.arete-cta-quote-icon {
+  color: var(--accent);
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+
+.arete-cta-quote {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.arete-cta-sub {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  font-weight: 300;
+}
+
 /* ===== EXPERIENCE LIST ===== */
+
 .experience-list {
   list-style: none;
   padding: 0;
@@ -1072,6 +1289,39 @@ img {
   height: 8px;
   border: 2px solid var(--accent);
   border-radius: 50%;
+}
+
+/* Icon-based pillar list */
+.pillar-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-left: 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pillar-list li:last-child {
+  border-bottom: none;
+}
+
+.pillar-list li::before {
+  display: none;
+}
+
+.pillar-list .pillar-icon-wrap {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--accent-subtle);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-list .pillar-icon-wrap i {
+  font-size: 1rem;
+  color: var(--accent);
 }
 
 /* ===== CONTACT FORM ===== */
@@ -1712,5 +1962,12 @@ img {
 
   .navbar-brand img {
     height: 36px;
+  }
+
+  .arete-quote-row {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
   }
 }

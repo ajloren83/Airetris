@@ -9,8 +9,8 @@
     content="Airetris GRC is a specialist governance, risk, and compliance advisory firm. We help organizations restore clarity, strengthen accountability, and navigate complexity.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="assets/airetris-logo.webp">
-  <link rel="apple-touch-icon" href="assets/airetris-logo.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/airetris-logo.svg">
+  <link rel="apple-touch-icon" href="assets/airetris-logo.svg">
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="assets/airetris-logo.webp" alt="Airetris GRC Logo"></a>
+      <a class="navbar-brand" href="index.html"><img src="assets/airetris-logo.svg" alt="Airetris GRC Logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,9 +48,11 @@
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
-    <!-- Background Image -->
+    <!-- Background Video -->
     <div class="hero-bg">
-      <img src="assets/images/hero-bg.jpg" alt="Modern corporate architecture">
+      <video id="heroBgVideo" autoplay muted loop playsinline poster="assets/images/hero-bg.jpg">
+        <source src="assets/videos/hero-video-pingpong.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="geo-grid"></div>
 
@@ -62,34 +64,20 @@
             Governance · Risk · Compliance
           </div>
           <h1 class="fade-up" data-delay="1">
-            Elevating Trust,<br>
-            Ethics & <span class="accent-text">Governance.</span>
+            Where Governance Becomes
+            <span class="accent-text">Strategic Advantage.</span>
           </h1>
           <p class="hero-description fade-up" data-delay="2">
-            Governance fails under pressure — not in theory, but in real decisions, real incentives, and real
-            consequences. Airetris helps organizations restore clarity and strengthen accountability.
+            Airetris GRC helps boards and leadership teams navigate regulation, sustainability, AI, and ethical risk by
+            integrating governance, performance, and accountability into a single operating system.
           </p>
           <div class="d-flex flex-wrap gap-3 fade-up" data-delay="3">
-            <a href="contact.html" class="btn btn-accent">Contact Us <i class="fa-solid fa-arrow-right ms-2"></i></a>
-            <a href="services.html" class="btn btn-outline-custom">Our Solutions <i
+            <a href="contact.html" class="btn btn-accent">Schedule a Conversation <i
+                class="fa-solid fa-arrow-right ms-2"></i></a>
+            <a href="services.html" class="btn btn-outline-custom">Explore Our Services <i
                 class="fa-solid fa-chevron-right ms-2"></i></a>
           </div>
 
-          <!-- Trust Bar -->
-          <div class="hero-trust-bar fade-up" data-delay="4">
-            <div class="hero-trust-item">
-              <div class="trust-number">25+</div>
-              <div class="trust-label">Years Experience</div>
-            </div>
-            <div class="hero-trust-item">
-              <div class="trust-number">500+</div>
-              <div class="trust-label">Cases Handled</div>
-            </div>
-            <div class="hero-trust-item">
-              <div class="trust-number">30+</div>
-              <div class="trust-label">Jurisdictions</div>
-            </div>
-          </div>
         </div>
         <div class="col-lg-5 offset-lg-1">
           <div class="hero-image-col fade-right" data-delay="2">
@@ -124,23 +112,18 @@
         <div class="col-lg-6 offset-lg-1">
           <div class="fade-up">
             <span class="section-label"><i class="fa-solid fa-circle"></i> The Problem</span>
-            <h2 class="section-title">Trust is <span class="accent">fragile.</span></h2>
+            <h2 class="section-title">Complexity has outgrown <span class="accent">traditional compliance.</span></h2>
             <p class="section-subtitle mb-4">
-              Organizations face growing regulatory complexity, heightened scrutiny, and accelerating technological
-              change — while decisions are made faster, with higher stakes and less margin for error.
+              Organisations face overlapping regulatory regimes, sustainability due diligence obligations, AI
+              accountability, geopolitical risk, and constant scrutiny from regulators, investors, and the public.
+              Fragmented compliance approaches create blind spots, cultural fatigue, and strategic drag.
             </p>
           </div>
           <div class="fade-up" data-delay="1">
-            <h6 class="mb-3" style="font-family: var(--font-body); font-weight: 600;">
-              Governance breaks when:</h6>
-            <ul class="experience-list">
-              <li>Compliance becomes fragmented and overly technical</li>
-              <li>Controls ignore how people actually behave</li>
-              <li>Ethics exist on paper, but not in practice</li>
-            </ul>
-            <p class="mt-3" style="font-size: 0.95rem; color: var(--text-light);">
-              When trust breaks, the cost is legal, financial, reputational — and often <strong
-                style="color: var(--text-dark);">irreversible.</strong>
+            <p class="mt-3" style="font-size: 0.95rem; color: var(--text-light); line-height: 1.85;">
+              Airetris GRC exists to close the gap between <strong style="color: var(--text-dark);">legal
+                compliance</strong>, <strong style="color: var(--text-dark);">ethical responsibility</strong>, and
+              <strong style="color: var(--text-dark);">long-term performance.</strong>
             </p>
           </div>
         </div>
@@ -150,34 +133,93 @@
 
   <div class="section-divider"></div>
 
-  <!-- Why Airetris Section -->
+  <!-- The Solution — Areté Section -->
   <section class="section-padding bg-light-section" id="whyUs">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-          <div class="fade-right">
-            <img src="assets/images/why-airetris.jpg" alt="Trusted governance advisory team" class="experience-img">
-          </div>
+
+      <!-- Row 1: Text + Image -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-5 order-lg-1 mb-4 mb-lg-0 fade-up">
+          <span class="section-label"><i class="fa-solid fa-circle"></i> The Solution</span>
+          <h2 class="section-title">Areté — <span class="accent">An Ethical Operating System.</span></h2>
+          <p class="mb-4" style="color: var(--text-light); line-height: 1.85;">
+            Areté is Airetris GRC's ethical operating system. It integrates global standards, behavioural science,
+            ethics, and real-world execution into a scalable governance model for boards and leadership teams.
+          </p>
+          <p class="mb-0" style="color: var(--text-light); line-height: 1.85;">
+            Rather than adding another framework, Areté embeds governance into decision-making, oversight, and
+            accountability across the organisation.
+          </p>
         </div>
-        <div class="col-lg-5 order-lg-1">
-          <div class="fade-up">
-            <span class="section-label"><i class="fa-solid fa-circle"></i> Why Airetris</span>
-            <h2 class="section-title">Built for moments when governance <span class="accent">matters most.</span></h2>
-            <p class="mb-4" style="color: var(--text-light); line-height: 1.85;">
-              Our team brings decades of global experience across legal, compliance, risk, technology, and ethics —
-              shaped by investigations, regulatory enforcement, and complex transactions worldwide.
-            </p>
-            <div class="p-3 rounded-3 mb-3" style="background: var(--off-white); border-left: 3px solid var(--accent);">
-              <p class="mb-0" style="font-size: 0.95rem; font-weight: 500; color: var(--text-dark);">
-                <i class="fa-solid fa-quote-left me-2" style="color: var(--accent);"></i>We are not a volume
-                consultancy. We are a specialist firm, trusted where judgment matters.
-              </p>
-            </div>
-            <a href="about.html" class="btn btn-primary-custom mt-3">About Us <i
-                class="fa-solid fa-arrow-right ms-2"></i></a>
-          </div>
+        <div class="col-lg-6 offset-lg-1 order-lg-2 fade-right">
+          <img src="assets/images/solution-building.jpg" alt="Modern glass building — Areté governance framework"
+            class="experience-img">
         </div>
       </div>
+
+      <!-- Row 2: Pillars grid + Quote + CTA -->
+      <div class="arete-pillars-section">
+        <p class="section-label justify-content-center mb-4 fade-up" data-delay="0"><i class="fa-solid fa-circle"></i>
+          Areté Pillars</p>
+        <div class="row g-4 mb-5">
+          <div class="col-sm-6 col-lg-3 fade-up" data-delay="1">
+            <div class="arete-pillar-card">
+              <div class="arete-pillar-card-top">
+                <div class="arete-pillar-num">01</div>
+                <div class="arete-pillar-icon">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+              </div>
+              <h6>Global Standards &amp; Regulation</h6>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3 fade-up" data-delay="2">
+            <div class="arete-pillar-card">
+              <div class="arete-pillar-card-top">
+                <div class="arete-pillar-num">02</div>
+                <div class="arete-pillar-icon">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+              </div>
+              <h6>Research, Evidence &amp; Practice</h6>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3 fade-up" data-delay="3">
+            <div class="arete-pillar-card">
+              <div class="arete-pillar-card-top">
+                <div class="arete-pillar-num">03</div>
+                <div class="arete-pillar-icon">
+                  <i class="fa-solid fa-fingerprint"></i>
+                </div>
+              </div>
+              <h6>Psychology &amp; Behavioural Design</h6>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3 fade-up" data-delay="4">
+            <div class="arete-pillar-card">
+              <div class="arete-pillar-card-top">
+                <div class="arete-pillar-num">04</div>
+                <div class="arete-pillar-icon">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+              </div>
+              <h6>Implementation, Governance &amp; Monitoring</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote + CTA Banner -->
+        <div class="arete-cta-banner fade-up" data-delay="5">
+          <div class="arete-cta-banner-content">
+            <i class="fa-solid fa-quote-left arete-cta-quote-icon"></i>
+            <p class="arete-cta-quote">Governance that scales with ambition.</p>
+            <p class="arete-cta-sub">Ready to embed Areté into your organisation?</p>
+          </div>
+          <a href="contact.html" class="btn btn-accent flex-shrink-0">Schedule a Conversation <i
+              class="fa-solid fa-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -189,8 +231,13 @@
         <span class="section-label fade-up"><i class="fa-solid fa-circle"></i> What We Do</span>
         <h2 class="section-title fade-up" data-delay="1">Governance, Risk & <span class="accent">Compliance</span>
           Advisory</h2>
-        <p class="section-subtitle mx-auto fade-up" data-delay="2">
-          We help boards and executive teams navigate complexity with clarity and confidence.
+        <p class="section-subtitle-wide mx-auto fade-up" data-delay="2">
+          Airetris GRC integrates governance, ethics, risk, sustainability, and technology into how organisations are
+          led, monitored, and held accountable.
+        </p>
+        <p class="section-subtitle-wide mx-auto fade-up" data-delay="3">
+          We operate as a long-term governance partner, combining advisory depth with execution capability to ensure
+          governance works in practice, not just on paper.
         </p>
       </div>
       <div class="row g-4">
@@ -239,21 +286,21 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-6 col-md-3">
-          <div class="stat-card fade-up">
-            <div class="stat-number" data-target="25" data-suffix="+">0</div>
-            <div class="stat-label">Years Experience</div>
+          <div class="stat-card fade-up" data-delay="0">
+            <div class="stat-number" data-target="100" data-suffix="+">0</div>
+            <div class="stat-label">Years Combined Experience</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="stat-card fade-up" data-delay="1">
-            <div class="stat-number" data-target="500" data-suffix="+">0</div>
-            <div class="stat-label">Cases Handled</div>
+            <div class="stat-number" data-target="200" data-suffix="+">0</div>
+            <div class="stat-label">Countries</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="stat-card fade-up" data-delay="2">
-            <div class="stat-number" data-target="30" data-suffix="+">0</div>
-            <div class="stat-label">Jurisdictions</div>
+            <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+            <div class="stat-label">Cases Handled</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
@@ -333,14 +380,14 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
-          <a href="index.html"><img src="assets/airetris-logo.webp" alt="Airetris GRC Logo"
+          <a href="index.html"><img src="assets/airetris-logo.svg" alt="Airetris GRC Logo"
               style="height: 50px; margin-bottom: 0.5rem;"></a>
           <p class="mt-3">A specialist governance, risk, and compliance advisory firm. Legal rigor. Behavioral science.
             Proven practice.</p>
           <div class="social-links mt-3">
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:info@airetrisgrc.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         <div class="col-lg-2 offset-lg-2">
@@ -375,8 +422,9 @@
             <p>&copy; 2026 Airetris GRC. All rights reserved.</p>
           </div>
           <div class="col-md-6 text-md-end">
-            <p class="d-inline-flex align-items-center gap-2 mb-0">Powered by <img src="assets/edgerp-logo.svg"
-                alt="EdgeRP" style="height: 24px;"></p>
+            <p class="d-inline-flex align-items-center gap-2 mb-0">Powered by <a href="https://edgerp.app/"
+                target="_blank" aria-label="EdgeRP - Opens in a new tab"><img src="assets/edgerp-logo.svg" alt="EdgeRP"
+                  style="height: 24px;"></a></p>
           </div>
         </div>
       </div>

@@ -23,13 +23,15 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Add stagger delay based on data attribute or position
-      const delay = entry.target.dataset.delay || 0;
+      // Use explicitly set data-delay; fall back to 0
+      const delay = entry.target.hasAttribute('data-delay')
+        ? parseInt(entry.target.dataset.delay, 10)
+        : 0;
       setTimeout(() => {
         entry.target.classList.add('visible');
-      }, delay * 100);
+      }, delay * 150);
       observer.unobserve(entry.target);
     }
   });
@@ -37,7 +39,10 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all animated elements
 document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach((el, index) => {
-  el.dataset.delay = el.dataset.delay || index % 4;
+  // Only assign a fallback delay if the element has no explicit data-delay
+  if (!el.hasAttribute('data-delay')) {
+    el.dataset.delay = index % 4;
+  }
   observer.observe(el);
 });
 
